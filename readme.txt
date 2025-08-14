@@ -11,6 +11,6 @@ tar gcc-linaro-14.0.0-2023.06-aarch64_arm-linux-gnueabihf.tar.xz -C /opt/toolcha
 
 3.build.
 make all
-make image
+
 ls images
 Image  rootfs.img
