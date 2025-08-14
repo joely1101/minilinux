@@ -1,0 +1,23 @@
+#!/bin/sh
+# /etc/rcS minimal startup script
+
+# 1. 掛載必要檔案系統
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mount -t tmpfs tmpfs /tmp
+mount -t tmpfs tmpfs /var
+mkdir -p /var/empty
+chown root:root /var/empty
+chmod 755 /var/empty
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+mknod -m 600 /dev/console c 5 1
+mknod -m 600 /dev/tty c 5 0
+mount -t tmpfs tmpfs /etc/ssh
+ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+# 2. 設定網卡
+ifconfig eth1 169.254.1.100 up
+PS1="[\u@\h \W]\$ "
+hostname myos
+

@@ -1,0 +1,11 @@
+root:x:0:root
+bin:x:1:root,bin,daemon
+daemon:x:2:root,bin,daemon
+nobody:x:99:
+system:x:500:
+audit:x:502:
+admin:x:501:root,admin
+custadmin:x:504:custadmin
+rouser:x:503:rouser
+sshd:x:504:
+
