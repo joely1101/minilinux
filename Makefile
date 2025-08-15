@@ -2,15 +2,15 @@
 #export MAKE:=make -j$(shell getconf _NPROCESSORS_ONLN)
 export MAKE:=make
 
-#export PATH:=$(PATH):/opt/toolchain/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-linux-gnueabihf/bin
+#export PATH:=$(PATH):/usr/local/toolchain/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-linux-gnueabihf/bin
 #export CROSS_HOST:=arm-none-linux-gnueabihf
-#export PATH:=$(PATH):/opt/toolchain/marvell-tools-12006.0/bin
-#export CROSS_HOST:=aarch64-marvell-linux-gnu
-export PATH:=$(PATH):/opt/toolchain/gcc-linaro-14.0.0-2023.06-x86_64_arm-linux-gnueabihf/bin
+export PATH:=$(PATH):/usr/local/toolchain/marvell-tools-12006.0/bin
+export CROSS_COMPILE_KERNEL:=aarch64-marvell-linux-gnu-
+export PATH:=$(PATH):/usr/local/toolchain/gcc-linaro-14.0.0-2023.06-x86_64_arm-linux-gnueabihf/bin
 export CROSS_HOST:=arm-linux-gnueabihf
 export CROSS_COMPILE:=${CROSS_HOST}-
-export PATH:=$(PATH):/opt/toolchain/gcc-linaro-14.0.0-2023.06-x86_64_aarch64-linux-gnu/bin
-export CROSS_COMPILE_KERNEL:=aarch64-linux-gnu-
+#export PATH:=$(PATH):/usr/local/toolchain/gcc-linaro-14.0.0-2023.06-x86_64_aarch64-linux-gnu/bin
+#export CROSS_COMPILE_KERNEL:=aarch64-linux-gnu-
 export TOPDIR=$(shell pwd)
 export ROOTFS:=$(TOPDIR)/rootfs
 
